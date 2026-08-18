@@ -331,36 +331,6 @@ function Videos() {
                         ),
                     ),
                 ]),
-                h("div", { class: "videos__nav" }, [
-                    h(
-                        "button",
-                        {
-                            type: "button",
-                            class: "videos__arrow arrow-btn arrow-btn--prev",
-                            "aria-label": "Previous video",
-                        },
-                        [
-                            h("img", {
-                                src: "assets/images/icons/arrow.svg",
-                                alt: "Arrow left",
-                            }),
-                        ],
-                    ),
-                    h(
-                        "button",
-                        {
-                            type: "button",
-                            class: "videos__arrow arrow-btn",
-                            "aria-label": "Next video",
-                        },
-                        [
-                            h("img", {
-                                src: "assets/images/icons/arrow.svg",
-                                alt: "Arrow right",
-                            }),
-                        ],
-                    ),
-                ]),
             ]),
         ]),
     ]);
