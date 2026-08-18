@@ -201,8 +201,7 @@ h6 {
     height: 4.8rem;
     border-radius: 2.4rem;
     font-family: var(--font-heading);
-    line-height: normal;
-    font-weight: 400;
+    line-height: 4.8rem;
     font-size: 1.1rem;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
@@ -335,7 +334,7 @@ header {
     color: #fff;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-49%);
 }
 .header__socials {
     display: flex;
@@ -380,7 +379,7 @@ header {
 }
 .hero__inner {
     position: relative;
-    padding-top: 6rem;
+    padding-top: 6.2rem;
     padding-bottom: 12rem;
 }
 .hero__content {
@@ -393,9 +392,8 @@ header {
 .hero__content p {
     font-size: 14px;
     font-family: "SF Compact Text";
-    line-height: auto;
     font-weight: 300;
-    line-height: 16.5px;
+    line-height: 17px;
     max-width: 50rem;
 }
 .hero__text {
@@ -995,6 +993,7 @@ header {
     bottom: 4.7rem;
     left: 50%;
     transform: translateX(-50%);
+    margin-left: 1rem;
 }
 .inspirations__quote {
     font-family: var(--font-quote);
@@ -1099,10 +1098,11 @@ footer {
 }
 hr {
     border-top: 1px solid rgba(179, 179, 179, 0.5);
+    border-bottom: none;
 }
 .footer__bottom {
     max-width: var(--content-max-width);
-    height: 8rem;
+    height: 7.9rem;
     align-content: center;
     display: flex;
     justify-content: space-between;
@@ -1115,7 +1115,7 @@ hr {
 }
 .footer__nav {
     display: flex;
-    gap: 3.4rem;
+    gap: 3.7rem;
     line-height: 16px;
     align-items: center;
 }
