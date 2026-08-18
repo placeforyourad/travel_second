@@ -487,6 +487,10 @@ header {
     padding: 15rem 0;
     max-width: 100%;
 }
+
+.pro  .container {
+    padding: 0 calc(var(--gutter) + 1px);
+}
 .pro__heading {
     max-width: 76.7rem;
     margin-bottom: 9.6rem;
@@ -615,7 +619,7 @@ header {
     max-width: 39%;
     min-width: 67.8rem;
     background: rgba(60, 74, 81, 0.94);
-    padding: 12.7rem 17.6rem 0 13.3rem;
+    padding: 12.7rem 17.7rem 0 13.3rem;
     display: flex;
     flex-direction: column;
     gap: 9.6rem;
@@ -815,7 +819,7 @@ header {
 .newsletter .container {
     max-width: var(--content-max-width);
     position: relative;
-    margin: 0 var(--gutter);
+    margin: 0 calc(var(--gutter) + 1px) 0 var(--gutter);
     padding: 0 13.3rem 0 13.5rem;
     flex-wrap: wrap;
     display: flex;
@@ -909,6 +913,9 @@ header {
 /* ---------- INSPIRATIONS BLOG GRID ---------- */
 .inspirations {
     padding-top: 24.9rem;
+}
+.inspirations .container {
+    padding: 0 calc(var(--gutter) + 1px) 0 var(--gutter);
 }
 .inspirations__intro {
     display: flex;
