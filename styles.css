@@ -815,6 +815,7 @@ header {
     justify-content: center;
 }
 .newsletter .container {
+    max-width: var(--content-max-width);
     position: relative;
     margin: 0 var(--gutter);
     padding: 0 13.3rem 0 13.5rem;
