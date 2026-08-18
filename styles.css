@@ -313,9 +313,6 @@ h6 {
     object-fit: cover;
 }
 
-/* ==========================================================================
-   HEADER
-   ========================================================================== */
 header {
     position: absolute;
     top: 0;
@@ -328,7 +325,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 100%;
 }
 .header__logo {
     font-family: var(--font-heading);
@@ -813,15 +809,17 @@ header {
 /* ---------- NEWSLETTER ---------- */
 .newsletter {
     position: relative;
-    height: 80rem;
-    max-width: var(--content-max-width);
     margin: 0 auto;
     display: flex;
+    height: 79.8rem;
+    justify-content: center;
 }
 .newsletter .container {
-    margin-top: auto;
-    padding-right: 13.3rem;
-    padding-left: 13.5rem;
+    position: relative;
+    margin: 0 var(--gutter);
+    padding: 0 13.3rem 0 13.5rem;
+    flex-wrap: wrap;
+    display: flex;
 }
 .newsletter__bg--rounded,
 .newsletter__card--rounded {
