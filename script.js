@@ -1,6 +1,4 @@
-function createElement(tag, attrs, children) {
-    attrs = attrs || {};
-    children = children === undefined ? [] : children;
+function createElement(tag, attrs = {}, children = []) {
 
     const el = document.createElement(tag);
 
@@ -409,7 +407,7 @@ const NEWSLETTER_FIELDS = [
     },
 ];
 
-function NewsletterField({ label, type, id, name, required }) {
+function NewsletterField({ label, type, id, name, required = false }) {
     return createElement("div", { class: "newsletter__field" }, [
         createElement("label", { for: id }, label),
         createElement("input", {
@@ -778,4 +776,7 @@ const main = createElement("main", {}, [
     Inspirations(),
 ]);
 
-document.body.append(Header(), main, Footer());
+document.addEventListener('DOMContentLoaded', function () {
+    document.body.append(Header(), main, Footer());
+    console.log('DOM готов!')
+});
