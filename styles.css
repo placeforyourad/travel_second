@@ -488,7 +488,7 @@ header {
     max-width: 100%;
 }
 
-.pro  .container {
+.pro .container {
     padding: 0 calc(var(--gutter) + 1px);
 }
 .pro__heading {
