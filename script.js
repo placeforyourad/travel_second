@@ -6,7 +6,7 @@ function createElement(tag, attrs, children) {
 
     Object.entries(attrs).forEach(([key, value]) => {
         if (key === "class") {
-            el.className = Array.isArray(value) ? value.join(" ") : value;
+            el.className = value;
             return;
         }
 
@@ -30,24 +30,24 @@ function createElement(tag, attrs, children) {
 const h = createElement;
 
 function Header() {
-    return h("header", {}, [
-        h("div", { class: "header__inner container" }, [
-            h("div", { class: "header__socials" }, [
-                h("a", { href: "#", class: "header__social-link" }, [
-                    h("img", {
+    return createElement("header", {}, [
+        createElement("div", { class: "header__inner container" }, [
+            createElement("div", { class: "header__socials" }, [
+                createElement("a", { href: "#", class: "header__social-link" }, [
+                    createElement("img", {
                         src: "assets/images/icons/facebook.svg",
                         alt: "Facebook",
                     }),
                 ]),
-                h("a", { href: "#", class: "header__social-link" }, [
-                    h("img", {
+                createElement("a", { href: "#", class: "header__social-link" }, [
+                    createElement("img", {
                         src: "assets/images/icons/twitter.svg",
                         alt: "Twitter",
                     }),
                 ]),
             ]),
-            h("a", { href: "#", class: "header__logo" }, "MITRAVEL"),
-            h(
+            createElement("a", { href: "#", class: "header__logo" }, "MITRAVEL"),
+            createElement(
                 "button",
                 {
                     type: "button",
@@ -55,8 +55,8 @@ function Header() {
                     "aria-label": "Open menu",
                 },
                 [
-                    h("span", { class: "header__burger-line" }),
-                    h("span", { class: "header__burger-line" }),
+                    createElement("span", { class: "header__burger-line" }),
+                    createElement("span", { class: "header__burger-line" }),
                 ],
             ),
         ]),
@@ -64,58 +64,58 @@ function Header() {
 }
 
 function Hero() {
-    return h("section", { class: "hero" }, [
-        h("img", {
+    return createElement("section", { class: "hero" }, [
+        createElement("img", {
             class: "hero__bg",
             src: "assets/images/motherEarth.png",
             alt: "",
         }),
-        h("div", { class: "hero__overlay" }),
-        h("div", { class: "hero__inner container" }, [
-            h("div", { class: "hero__content" }, [
-                h("span", { class: "eyebrow eyebrow--dark" }, "New Book"),
-                h("h1", {}, "Mother Earth Hosts Our Travels"),
-                h(
+        createElement("div", { class: "hero__overlay" }),
+        createElement("div", { class: "hero__inner container" }, [
+            createElement("div", { class: "hero__content" }, [
+                createElement("span", { class: "eyebrow eyebrow--dark" }, "New Book"),
+                createElement("h1", {}, "Mother Earth Hosts Our Travels"),
+                createElement(
                     "p",
                     {},
                     "There are not many cities that have experienced such social and political extremes in recent history as Amsterdam. In the 20th century alone, Amsterdam faced the atrocities of war for the first time in 400 years, became the radical center of 1960s social movements and witnessed a complete",
                 ),
             ]),
-            h("a", { href: "#", class: "btn btn--coral" }, "Buy The Book"),
+            createElement("a", { href: "#", class: "btn btn--coral" }, "Buy The Book"),
         ]),
     ]);
 }
 
 function HeroSearch() {
-    return h("div", { class: "hero-search container" }, [
-        h("div", { class: "hero-search__box" }, [
-            h("input", {
+    return createElement("div", { class: "hero-search container" }, [
+        createElement("div", { class: "hero-search__box" }, [
+            createElement("input", {
                 class: "hero-search__field",
                 type: "text",
                 name: "q",
                 placeholder: "Search stories",
             }),
-            h("span", {}, [
-                h("img", {
+            createElement("span", {}, [
+                createElement("img", {
                     src: "assets/images/icons/search.svg",
                     alt: "",
                 }),
             ]),
         ]),
-        h("div", { class: "hero-search__pagination" }, [
-            h("div", { class: "hero-search__preview" }, [
-                h("img", {
+        createElement("div", { class: "hero-search__pagination" }, [
+            createElement("div", { class: "hero-search__preview" }, [
+                createElement("img", {
                     src: "/assets/images/heroPreview.png",
                     alt: "Preview of the featured travel video",
                 }),
-                h("span", { class: "hero-search__play" }, [
-                    h("img", {
+                createElement("span", { class: "hero-search__play" }, [
+                    createElement("img", {
                         src: "assets/images/icons/play.svg",
                         alt: "",
                     }),
                 ]),
             ]),
-            h(
+            createElement(
                 "button",
                 {
                     type: "button",
@@ -123,14 +123,14 @@ function HeroSearch() {
                     "aria-label": "Previous story",
                 },
                 [
-                    h("img", {
+                    createElement("img", {
                         src: "assets/images/icons/arrow.svg",
                         alt: "Previous story",
                     }),
                 ],
             ),
-            h("span", { class: "hero-search__label" }, "Wonderful mountain"),
-            h(
+            createElement("span", { class: "hero-search__label" }, "Wonderful mountain"),
+            createElement(
                 "button",
                 {
                     type: "button",
@@ -138,7 +138,7 @@ function HeroSearch() {
                     "aria-label": "Next story",
                 },
                 [
-                    h("img", {
+                    createElement("img", {
                         src: "assets/images/icons/arrow.svg",
                         alt: "Next story",
                     }),
@@ -154,22 +154,22 @@ const PRO_CARDS = [1, 2, 3, 4].map((n) => ({
 }));
 
 function Pro() {
-    return h("section", { class: "pro" }, [
-        h("div", { class: "container" }, [
-            h(
+    return createElement("section", { class: "pro" }, [
+        createElement("div", { class: "container" }, [
+            createElement(
                 "h2",
                 {
                     class: "pro__heading section-heading section-heading--left",
                 },
                 "Become A Travel Pro In One Easy Lesson",
             ),
-            h(
+            createElement(
                 "div",
                 { class: "pro__gallery" },
                 PRO_CARDS.map(({ image, caption }) =>
-                    h("div", { class: "pro__card" }, [
-                        h("img", { src: image, alt: "", loading: "lazy" }),
-                        h("span", { class: "pro__caption" }, caption),
+                    createElement("div", { class: "pro__card" }, [
+                        createElement("img", { src: image, alt: "", loading: "lazy" }),
+                        createElement("span", { class: "pro__caption" }, caption),
                     ]),
                 ),
             ),
@@ -201,59 +201,59 @@ const STORY_POSTS = [
 ];
 
 function Stories() {
-    return h("section", { class: "stories" }, [
-        h("div", { class: "container" }, [
-            h("div", { class: "stories__bg" }, [
-                h("img", {
+    return createElement("section", { class: "stories" }, [
+        createElement("div", { class: "container" }, [
+            createElement("div", { class: "stories__bg" }, [
+                createElement("img", {
                     src: "/assets/images/featuredStories.png",
                     alt: "Featured Stories",
                     loading: "lazy",
                 }),
             ]),
-            h("div", { class: "stories__layout" }, [
-                h("div", { class: "stories__main" }, [
-                    h("div", { class: "stories__intro" }, [
-                        h(
+            createElement("div", { class: "stories__layout" }, [
+                createElement("div", { class: "stories__main" }, [
+                    createElement("div", { class: "stories__intro" }, [
+                        createElement(
                             "span",
                             { class: "eyebrow eyebrow--coral" },
                             "Featured",
                         ),
-                        h(
+                        createElement(
                             "h2",
                             {},
                             "How To Fly A Private Jet On Your Next Trip",
                         ),
-                        h(
+                        createElement(
                             "p",
                             {},
                             "The state of Utah in the United States is home to lots of beautiful National Parks, & Bryce Canyon National Park ranks as three of the most magnificent & awe inspiring.",
                         ),
                     ]),
-                    h(
+                    createElement(
                         "a",
                         { href: "#", class: "stories__cta btn btn--teal" },
                         "Read Article",
                     ),
                 ]),
-                h("aside", { class: "stories__side" }, [
-                    h("h3", {}, "Featured Stories"),
-                    h(
+                createElement("aside", { class: "stories__side" }, [
+                    createElement("h3", {}, "Featured Stories"),
+                    createElement(
                         "div",
                         { class: "stories__posts" },
                         STORY_POSTS.map(({ avatar, title, date }) =>
-                            h("div", { class: "stories__post" }, [
-                                h("img", {
+                            createElement("div", { class: "stories__post" }, [
+                                createElement("img", {
                                     src: `/assets/images/faces/avatar-${avatar}.svg`,
                                     alt: "",
                                     loading: "lazy",
                                 }),
-                                h("div", {}, [
-                                    h(
+                                createElement("div", {}, [
+                                    createElement(
                                         "div",
                                         { class: "stories__post-title" },
                                         title,
                                     ),
-                                    h(
+                                    createElement(
                                         "div",
                                         { class: "stories__post-date" },
                                         date,
@@ -288,39 +288,39 @@ const VIDEO_SLIDES = [
 ];
 
 function Videos() {
-    return h("section", { class: "videos" }, [
-        h("div", { class: "container" }, [
-            h("div", { class: "videos__intro" }, [
-                h("h2", { class: "section-heading" }, "Featured Videos"),
-                h(
+    return createElement("section", { class: "videos" }, [
+        createElement("div", { class: "container" }, [
+            createElement("div", { class: "videos__intro" }, [
+                createElement("h2", { class: "section-heading" }, "Featured Videos"),
+                createElement(
                     "p",
                     { class: "section-sub" },
                     "The state of Utah in the United States is home to lots of beautiful National Parks, & Bryce Canyon National Park ranks as three of the most magnificent & awe inspiring.",
                 ),
             ]),
-            h("div", { class: "videos__slider" }, [
+            createElement("div", { class: "videos__slider" }, [
                 ...VIDEO_SLIDES.map(({ id, checked }) =>
-                    h("input", {
+                    createElement("input", {
                         type: "radio",
                         name: "video",
                         id,
                         checked: !!checked,
                     }),
                 ),
-                h("div", { class: "videos__track" }, [
-                    h(
+                createElement("div", { class: "videos__track" }, [
+                    createElement(
                         "div",
                         { class: "videos__row" },
                         VIDEO_SLIDES.map(({ id, image, caption }) =>
-                            h("label", { class: "videos__slide", for: id }, [
-                                h("div", { class: "videos__card" }, [
-                                    h("img", {
+                            createElement("label", { class: "videos__slide", for: id }, [
+                                createElement("div", { class: "videos__card" }, [
+                                    createElement("img", {
                                         src: `/assets/images/featuredVideos/card-${image}.png`,
                                         alt: "",
                                         loading: "lazy",
                                     }),
-                                    h("span", { class: "videos__caption" }, [
-                                        h("img", {
+                                    createElement("span", { class: "videos__caption" }, [
+                                        createElement("img", {
                                             src: "assets/images/icons/videoIcon.svg",
                                             alt: "",
                                         }),
@@ -360,44 +360,44 @@ const NEWSLETTER_FIELDS = [
 ];
 
 function Newsletter() {
-    return h("section", { class: "newsletter" }, [
-        h("div", { class: "container" }, [
-            h("div", { class: "newsletter__bg newsletter__bg--rounded" }, [
-                h("img", {
+    return createElement("section", { class: "newsletter" }, [
+        createElement("div", { class: "container" }, [
+            createElement("div", { class: "newsletter__bg newsletter__bg--rounded" }, [
+                createElement("img", {
                     src: "/assets/images/newsletterSection.png",
                     alt: "Background",
                     loading: "lazy",
                 }),
             ]),
-            h("div", { class: "newsletter__layout" }, [
-                h("div", { class: "newsletter__intro" }, [
-                    h(
+            createElement("div", { class: "newsletter__layout" }, [
+                createElement("div", { class: "newsletter__intro" }, [
+                    createElement(
                         "h2",
                         { class: "newsletter__intro-title" },
                         "Sign Up Our Newsletter",
                     ),
-                    h(
+                    createElement(
                         "p",
                         { class: "newsletter__intro-text" },
                         "The state of Utah in the United States is home to lots of beautiful National Parks, & Bryce Canyon National Park ranks as three of the most magnificent.",
                     ),
                 ]),
-                h(
+                createElement(
                     "div",
                     { class: "newsletter__card newsletter__card--rounded" },
                     [
-                        h("form", { class: "newsletter__card--rounded" }, [
-                            h(
+                        createElement("form", { class: "newsletter__card--rounded" }, [
+                            createElement(
                                 "div",
                                 { class: "newsletter__fields" },
                                 NEWSLETTER_FIELDS.map(
                                     ({ label, type, id, name, required }) =>
-                                        h(
+                                        createElement(
                                             "div",
                                             { class: "newsletter__field" },
                                             [
-                                                h("label", { for: id }, label),
-                                                h("input", {
+                                                createElement("label", { for: id }, label),
+                                                createElement("input", {
                                                     type,
                                                     id,
                                                     name,
@@ -407,7 +407,7 @@ function Newsletter() {
                                         ),
                                 ),
                             ),
-                            h(
+                            createElement(
                                 "button",
                                 {
                                     type: "submit",
@@ -426,11 +426,11 @@ function Newsletter() {
 function AvatarStack(avatars, extraClass) {
     extraClass = extraClass || "";
 
-    return h(
+    return createElement(
         "div",
         { class: `avatar-stack ${extraClass}`.trim() },
         avatars.map((n) =>
-            h("img", {
+            createElement("img", {
                 src: `/assets/images/faces/avatar-${n}.svg`,
                 alt: "",
             }),
@@ -459,30 +459,30 @@ function InspirationCard({
         .filter(Boolean)
         .join(" ");
 
-    return h("article", { class: cardClass }, [
-        h("img", {
+    return createElement("article", { class: cardClass }, [
+        createElement("img", {
             class: "inspirations__card-bg",
             src: image,
             alt: "",
             loading: "lazy",
         }),
-        h("div", { class: contentClass }, [
+        createElement("div", { class: contentClass }, [
             tag &&
-                h(
+                createElement(
                     "span",
                     { class: "inspirations__tag eyebrow eyebrow--tag" },
                     tag,
                 ),
             playIcon &&
-                h("img", {
+                createElement("img", {
                     class: "inspirations__play-icon",
                     src: "/assets/images/icons/circlePlay.svg",
                     alt: "",
                 }),
-            h("div", {}, [
+            createElement("div", {}, [
                 category &&
-                    h("span", { class: "inspirations__category" }, category),
-                h("h3", { class: "inspirations__title" }, title),
+                    createElement("span", { class: "inspirations__category" }, category),
+                createElement("h3", { class: "inspirations__title" }, title),
                 AvatarStack(avatars),
             ]),
         ]),
@@ -490,24 +490,24 @@ function InspirationCard({
 }
 
 function QuoteCard() {
-    return h(
+    return createElement(
         "article",
         { class: "inspirations__card inspirations__card--quote" },
         [
-            h("img", {
+            createElement("img", {
                 class: "inspirations__card-bg",
                 src: "/assets/images/inspirations/blog-5.png",
                 alt: "",
                 loading: "lazy",
             }),
-            h("div", { class: "inspirations__quote-wrap" }, [
-                h("div", { class: "inspirations__quote-inner" }, [
-                    h(
+            createElement("div", { class: "inspirations__quote-wrap" }, [
+                createElement("div", { class: "inspirations__quote-inner" }, [
+                    createElement(
                         "cite",
                         { class: "inspirations__quote-cite" },
                         "Andre Gide",
                     ),
-                    h(
+                    createElement(
                         "blockquote",
                         { class: "inspirations__quote" },
                         "Man cannot discover new oceans unless he has the courage to lose sight of the shore.",
@@ -568,17 +568,17 @@ function Inspirations() {
         }),
     ];
 
-    return h("section", { class: "inspirations" }, [
-        h("div", { class: "container" }, [
-            h("div", { class: "inspirations__intro" }, [
-                h("h2", { class: "section-heading" }, "Inspirations"),
-                h(
+    return createElement("section", { class: "inspirations" }, [
+        createElement("div", { class: "container" }, [
+            createElement("div", { class: "inspirations__intro" }, [
+                createElement("h2", { class: "section-heading" }, "Inspirations"),
+                createElement(
                     "p",
                     { class: "section-sub" },
                     "The state of Utah in the United States is home to lots of beautiful National Parks, & Bryce Canyon National Park ranks as three of the most magnificent & awe inspiring.",
                 ),
             ]),
-            h("div", { class: "inspirations__grid" }, cards),
+            createElement("div", { class: "inspirations__grid" }, cards),
         ]),
     ]);
 }
@@ -620,15 +620,15 @@ const FOOTER_LINK_COLUMNS = [
 ];
 
 function FooterColumn({ title, links }) {
-    return h("div", { class: "footer__col" }, [
-        h("h4", {}, title),
-        h("div", { class: "footer__divider" }),
-        h(
+    return createElement("div", { class: "footer__col" }, [
+        createElement("h4", {}, title),
+        createElement("div", { class: "footer__divider" }),
+        createElement(
             "ul",
             { class: "footer__list" },
             links.map((label) =>
-                h("li", {}, [
-                    h("a", { class: "footer__link", href: "#" }, label),
+                createElement("li", {}, [
+                    createElement("a", { class: "footer__link", href: "#" }, label),
                 ]),
             ),
         ),
@@ -636,25 +636,25 @@ function FooterColumn({ title, links }) {
 }
 
 function SubscribeColumn() {
-    return h("div", { class: "footer__col footer__col--subscribe" }, [
-        h("h4", {}, "Subscribe Now"),
-        h("div", { class: "footer__divider" }),
-        h("form", { class: "footer__form" }, [
-            h("div", { class: "footer__email-input" }, [
-                h("input", {
+    return createElement("div", { class: "footer__col footer__col--subscribe" }, [
+        createElement("h4", {}, "Subscribe Now"),
+        createElement("div", { class: "footer__divider" }),
+        createElement("form", { class: "footer__form" }, [
+            createElement("div", { class: "footer__email-input" }, [
+                createElement("input", {
                     type: "email",
                     class: "footer__email-field",
                     placeholder: "Your email",
                     "aria-label": "Ваш email",
                     required: true,
                 }),
-                h("img", {
+                createElement("img", {
                     class: "footer__email-icon",
                     src: "/assets/images/icons/user.svg",
                     alt: "",
                 }),
             ]),
-            h(
+            createElement(
                 "button",
                 {
                     type: "submit",
@@ -667,31 +667,31 @@ function SubscribeColumn() {
 }
 
 function Footer() {
-    return h("footer", {}, [
-        h("div", { class: "container" }, [
-            h("div", { class: "footer__widgets" }, [
+    return createElement("footer", {}, [
+        createElement("div", { class: "container" }, [
+            createElement("div", { class: "footer__widgets" }, [
                 ...FOOTER_LINK_COLUMNS.map(FooterColumn),
                 SubscribeColumn(),
             ]),
         ]),
-        h("hr"),
-        h("div", { class: "container" }, [
-            h("div", { class: "footer__bottom" }, [
-                h(
+        createElement("hr"),
+        createElement("div", { class: "container" }, [
+            createElement("div", { class: "footer__bottom" }, [
+                createElement(
                     "span",
                     {},
                     "© 2019 Mass Impressions. Designed by Tran Mau Tri Tam for Mass Impressions. All rights reserved.",
                 ),
-                h("nav", { class: "footer__nav" }, [
-                    h("a", { href: "#" }, "Terms of Service"),
-                    h("a", { href: "#" }, "Privacy Policy"),
+                createElement("nav", { class: "footer__nav" }, [
+                    createElement("a", { href: "#" }, "Terms of Service"),
+                    createElement("a", { href: "#" }, "Privacy Policy"),
                 ]),
             ]),
         ]),
     ]);
 }
 
-const main = h("main", {}, [
+const main = createElement("main", {}, [
     Hero(),
     HeroSearch(),
     Pro(),
